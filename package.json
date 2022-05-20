@@ -1,0 +1,41 @@
+{
+  "name": "aadb2c-gds-custom-ui",
+  "version": "1.0.0",
+  "description": "Provides a custom Azure AD B2C user interface that is Government Design System compliant.",
+  "main": "index.js",
+  "scripts": {
+    "copy-images": "ncp node_modules/govuk-frontend/govuk/assets/images src/assets/images",
+    "copy-fonts": "ncp node_modules/govuk-frontend/govuk/assets/fonts src/assets/fonts",
+    "copy-js": "ncp node_modules/govuk-frontend/govuk/all.js src/assets/js/all.js",
+    "copy-assets": "npm run copy-images && npm run copy-fonts && npm run copy-js",
+    "clean": "del-cli src/assets/images/* src/assets/fonts/* src/assets/css/* src/assets/js/*",
+    "build": "npm run clean && npm run sass-prod && npm run copy-assets",
+    "sass-dev": "sass --watch --update --style=expanded node_modules/govuk-frontend/govuk:src/assets/css",
+    "sass-prod": "sass --no-source-map --style=compressed node_modules/govuk-frontend/govuk:src/assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/national-underground-asset-register/aadb2c-gds-custom-ui.git"
+  },
+  "keywords": [
+    "aadb2c",
+    "azure",
+    "identity",
+    "gds",
+    "govuk-frontend"
+  ],
+  "author": "Colin Henderson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/national-underground-asset-register/aadb2c-gds-custom-ui/issues"
+  },
+  "homepage": "https://github.com/national-underground-asset-register/aadb2c-gds-custom-ui#readme",
+  "devDependencies": {
+    "del-cli": "^4.0.1",
+    "ncp": "^2.0.0",
+    "sass": "^1.52.0"
+  },
+  "dependencies": {
+    "govuk-frontend": "^4.1.0"
+  }
+}
