@@ -1,0 +1,6 @@
+{
+    "globalHeaders": {
+      "Access-Control-Allow-Origin": "https://nuarb2c.b2clogin.com",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS"
+    }
+}
