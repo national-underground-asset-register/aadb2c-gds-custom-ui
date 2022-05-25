@@ -34,7 +34,6 @@
 <body class="govuk-template__body app-body-class" data-test="My value" data-other="report:details">
   <script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-
   </script>
   
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
@@ -128,7 +127,11 @@
 
   <script src="https://blue-water-0c9740703.1.azurestaticapps.net/assets/js/all.js"></script>
   <script>
-    window.GOVUKFrontend.initAll()
+    const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
+    
+    inputItems.forEach(function(inputItem){
+      inputItem.classList.add("govuk-input");
+    });
   </script>
 </body>
 
