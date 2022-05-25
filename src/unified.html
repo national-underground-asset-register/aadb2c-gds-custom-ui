@@ -127,9 +127,22 @@
 
   <script src="https://blue-water-0c9740703.1.azurestaticapps.net/assets/js/all.js"></script>
   <script>
-    // Add 
+    // Add heading class
     const introItem = document.querySelector("#localAccountForm > div.intro > h2");
     introItem.classList.add("govuk-heading-m");
+
+    // Set form groups to entry items
+    const entryItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item.govuk-form-group");
+    entryItems.forEach(function(entryItem){
+      entryItem.classList.add("govuk-form-group");
+    });
+
+    // Set label classes
+    const labelItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item.govuk-form-group > label");
+    labelItems.forEach(function(labelItem){
+      labelItem.classList.add("govuk-label");
+      labelItem.classList.add("govuk-label--m");
+    });
 
     // Add govuk-input class to input fields
     const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
