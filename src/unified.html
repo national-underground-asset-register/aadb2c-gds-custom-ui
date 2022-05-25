@@ -127,8 +127,12 @@
 
   <script src="https://blue-water-0c9740703.1.azurestaticapps.net/assets/js/all.js"></script>
   <script>
+    // Add 
+    const introItem = document.querySelector("#localAccountForm > div.intro > h2");
+    introItem.classList.add("govuk-heading-m");
+
+    // Add govuk-input class to input fields
     const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
-    
     inputItems.forEach(function(inputItem){
       inputItem.classList.add("govuk-input");
     });
