@@ -1,0 +1,8 @@
+#localAccountForm > div.entry > div.error.itemLevel
+{
+    display: block;
+    margin-top: 0; 
+    margin-bottom: 15px;
+    clear: both;
+    color: #d4351c;
+}

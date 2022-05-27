@@ -17,6 +17,7 @@
   <link rel="apple-touch-icon" href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/images/govuk-apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
+  <link href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/css/common.css" rel="stylesheet">
   <link href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/css/all.css" rel="stylesheet">
   <!--<![endif]-->
 
@@ -129,26 +130,31 @@
   <script>
     // Add heading class
     const introItem = document.querySelector("#localAccountForm > div.intro > h2");
-    introItem.classList.add("govuk-heading-m");
+    introItem.classList.add("govuk-heading-l");
 
     // Set form groups to entry items
-    const entryItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item.govuk-form-group");
+    const entryItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item");
     entryItems.forEach(function(entryItem){
       entryItem.classList.add("govuk-form-group");
     });
 
     // Set label classes
-    const labelItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item.govuk-form-group > label");
+    const labelItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > label");
     labelItems.forEach(function(labelItem){
       labelItem.classList.add("govuk-label");
       labelItem.classList.add("govuk-label--m");
     });
 
-    // Add govuk-input class to input fields
+    // Add govuk-input class to input fields and remove placeholder values as they go against GDS principles
     const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
     inputItems.forEach(function(inputItem){
       inputItem.classList.add("govuk-input");
+      inputItem.removeAttribute("placholder");
     });
+
+    // Add govuk-button class to submit button
+    const buttonItem = document.querySelector("#next");
+    buttonItem.classList.add("govuk-button");
   </script>
 </body>
 
