@@ -1,4 +1,4 @@
-#localAccountForm > div.entry > div.error.itemLevel
+.error .itemLevel
 {
     display: block;
     margin-top: 0; 

@@ -143,6 +143,12 @@
       labelItem.classList.add("govuk-label");
       labelItem.classList.add("govuk-label--m");
     });
+    
+    const passwordLabelItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.password-label > label");
+    labelItems.forEach(function(labelItem){
+      labelItem.classList.add("govuk-label");
+      labelItem.classList.add("govuk-label--m");
+    });
 
     // Add govuk-input class to input fields and remove placeholder values as they go against GDS principles
     const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
