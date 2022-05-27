@@ -7,7 +7,7 @@
     "copy-images": "ncp node_modules/govuk-frontend/govuk/assets/images src/assets/images",
     "copy-fonts": "ncp node_modules/govuk-frontend/govuk/assets/fonts src/assets/fonts",
     "copy-js": "ncp node_modules/govuk-frontend/govuk/all.js src/assets/js/all.js",
-    "copy-assets": "npm run copy-images && npm run copy-fonts && npm run copy-js",
+    "copy-assets": "npm run copy-images && npm run copy-fonts",
     "clean": "del-cli src/assets/images/* src/assets/fonts/* src/assets/css/all.css src/assets/js/*",
     "build": "npm run clean && npm run sass-prod && npm run copy-assets",
     "sass-dev": "sass --watch --update --style=expanded node_modules/govuk-frontend/govuk:src/assets/css",
