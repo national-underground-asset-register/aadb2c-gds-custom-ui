@@ -143,9 +143,9 @@
       labelItem.classList.add("govuk-label");
       labelItem.classList.add("govuk-label--m");
     });
-    
+
     const passwordLabelItems = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.password-label > label");
-    labelItems.forEach(function(labelItem){
+    passwordLabelItems.forEach(function(labelItem){
       labelItem.classList.add("govuk-label");
       labelItem.classList.add("govuk-label--m");
     });
@@ -155,6 +155,12 @@
     inputItems.forEach(function(inputItem){
       inputItem.classList.add("govuk-input");
       inputItem.removeAttribute("placholder");
+    });
+
+    // Add error styles
+    const errorMessages = document.querySelectorAll("div.error.itemLevel");
+    errorMessages.forEach(function(errorMessage){
+      inputItem.classList.add("govuk-error-message");
     });
 
     // Add govuk-button class to submit button
