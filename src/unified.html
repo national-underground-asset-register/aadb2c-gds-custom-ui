@@ -126,6 +126,13 @@
   </footer>
 
   <script>
+    $(function() {
+      $("#localAccountForm > div.entry > div.entry-item > div.error:hidden").show().trigger('show');
+      $("#localAccountForm > div.entry > div.entry-item > div.error").on('show', function(){
+        console.log('Div is now visible: ', this);
+      });
+    });
+
     // Add heading class
     const introItem = document.querySelector("#localAccountForm > div.intro > h2");
     introItem.classList.add("govuk-heading-l");
