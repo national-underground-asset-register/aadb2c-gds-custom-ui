@@ -150,6 +150,8 @@
       labelItem.classList.add("govuk-label--m");
     });
 
+    document.querySelector("#forgotPassword")
+
     // Add govuk-input class to input fields and remove placeholder values as they go against GDS principles
     const inputItems = document.querySelectorAll("#api .localAccount .entry .entry-item input");
     inputItems.forEach(function(inputItem){
@@ -160,7 +162,7 @@
     // Add error styles
     const errorMessages = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.error");
     errorMessages.forEach(function(errorMessage){
-      inputItem.classList.add("govuk-error-message");
+      errorMessage.classList.add("govuk-error-message");
     });
     document.querySelector("#localAccountForm > div.error.pageLevel").classList.add("govuk-error-summary");
 
