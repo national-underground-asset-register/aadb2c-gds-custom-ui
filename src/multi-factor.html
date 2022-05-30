@@ -125,6 +125,20 @@
       </div>
     </div>
   </footer>
+  <script>
+    // Set form groups to entry items
+    document.querySelector("div#api > div#codeVerification").classList.add("govuk-form-group");
+    
+    // Set the input style for the code textbox
+    document.querySelector("div#api > div#codeVerification > input#verificationCode").classList.add("govuk-input");
+
+    // Add govuk-button class to the buttons
+    document.querySelector("#sendCode").classList.add("govuk-button");
+    document.querySelector("#verifyCode").classList.add("govuk-button");
+    document.querySelector("#verifyPhone").classList.add("govuk-button");
+    document.querySelector("#continuePhone").classList.add("govuk-button");
+    document.querySelector("#cancel").classList.add("govuk-button");
+  </script>
 </body>
 
 </html>
