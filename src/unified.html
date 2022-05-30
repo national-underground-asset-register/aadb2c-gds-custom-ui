@@ -158,14 +158,14 @@
     });
 
     // Add error styles
-    const errorMessages = document.querySelectorAll("div.error.itemLevel");
+    const errorMessages = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.error");
     errorMessages.forEach(function(errorMessage){
       inputItem.classList.add("govuk-error-message");
     });
+    document.querySelector("#localAccountForm > div.error.pageLevel").classList.add("govuk-error-summary");
 
     // Add govuk-button class to submit button
-    const buttonItem = document.querySelector("#next");
-    buttonItem.classList.add("govuk-button");
+    document.querySelector("#next").classList.add("govuk-button");
   </script>
 </body>
 
