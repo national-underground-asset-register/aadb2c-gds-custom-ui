@@ -126,10 +126,29 @@
   </footer>
 
   <script>
-    $(function() {
-      $("#localAccountForm > div.entry > div.entry-item > div.error:hidden").show().trigger('show');
-      $("#localAccountForm > div.entry > div.entry-item > div.error").on('show', function(){
-        console.log('Div is now visible: ', this);
+    // Start observing visbility of element. On change, the
+    //   the callback is called with Boolean visibility as
+    //   argument:
+
+    function respondToVisibility(element, callback) {
+      var options = {
+        root: document.documentElement,
+      };
+
+      var observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          callback(entry.intersectionRatio > 0);
+        });
+      }, options);
+
+      observer.observe(element);
+    }
+
+    const errorMessages2 = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.error");
+    errorMessages2.forEach(function(errorMessage){
+      respondToVisibility(errorMessage, visible => {
+        console.log('Visible: ', visible);
+        console.log('Element:', errorMessage);
       });
     });
 
