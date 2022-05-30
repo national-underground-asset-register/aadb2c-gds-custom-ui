@@ -147,7 +147,11 @@
     const errorMessages2 = document.querySelectorAll("#localAccountForm > div.entry > div.entry-item > div.error");
     errorMessages2.forEach(function(errorMessage){
       respondToVisibility(errorMessage, visible => {
-        errorMessage.parentElement.classList.add("govuk-form-group--error");
+        if (visible) {
+          errorMessage.parentElement.classList.add("govuk-form-group--error");
+        } else {
+          errorMessage.parentElement.classList.remove("govuk-form-group--error");
+        }
       });
     });
 
