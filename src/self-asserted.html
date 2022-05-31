@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/images/govuk-apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-  <link href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/css/all.css" rel="stylesheet">
+  <link href="https://blue-water-0c9740703.1.azurestaticapps.net/assets/css/all.css" rel="stylesheet" data-preload="true">
   <!--<![endif]-->
 
   <!--[if IE 8]>
@@ -79,7 +79,11 @@
     </div>
 
     <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
-      <div id="api"></div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div id="api"></div>
+        </div>
+      </div>
     </main>
   </div>
 
