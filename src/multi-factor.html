@@ -29,12 +29,22 @@
   <![endif]-->
 
   <meta property="og:image" content="https://blue-water-0c9740703.1.azurestaticapps.net/assets/images/govuk-opengraph-image.png">
+
+  <styles>
+    .buttons {
+      display: flex;
+      margin: 0 -5px;
+    }
+
+    .buttons .item-spacing {
+      margin-right: 5px;
+    }
+  </styles>
 </head>
 
 <body class="govuk-template__body app-body-class" data-test="My value" data-other="report:details">
   <script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-
   </script>
   
   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
@@ -143,11 +153,15 @@
     // Set the input style for the code textbox
     document.querySelector("div#api > div#codeVerification > input#verificationCode").classList.add("govuk-input");
 
-    // Add govuk-button class to the buttons
+    // Add govuk-button class to the buttons, and adjust their spacing
     document.querySelector("#sendCode").classList.add("govuk-button");
+    document.querySelector("#sendCode").classList.add("item-spacing");
     document.querySelector("#verifyCode").classList.add("govuk-button");
+    document.querySelector("#verifyCode").classList.add("item-spacing");
     document.querySelector("#verifyPhone").classList.add("govuk-button");
+    document.querySelector("#verifyPhone").classList.add("item-spacing");
     document.querySelector("#continuePhone").classList.add("govuk-button");
+    document.querySelector("#continuePhone").classList.add("item-spacing");
     document.querySelector("#cancel").classList.add("govuk-button");
   </script>
 </body>
