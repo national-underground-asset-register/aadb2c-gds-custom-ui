@@ -140,6 +140,39 @@
     </div>
   </footer>
   <script>
+    function respondToVisibility(element, callback) {
+      var options = {
+        root: document.documentElement,
+      };
+
+      var observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          callback(entry.intersectionRatio > 0);
+        });
+      }, options);
+
+      observer.observe(element);
+    }
+
+    // Add error styling when an error message becomes visible
+    document.querySelector("#codeVerification > div.error.itemLevel").forEach(function(errorMessage){
+      respondToVisibility(errorMessage, visible => {
+        if (visible) {
+          // Apply the error style to parent form group element
+          errorMessage.parentElement.classList.add("govuk-form-group--error");
+
+          // Apply error style to text input element
+          errorMessage.nextElementSibling.classList.add("govuk-input--error")
+        } else {
+          // Remove the error style from parent form group element
+          errorMessage.parentElement.classList.remove("govuk-form-group--error");
+
+          // Remove error style from text input element
+          errorMessage.nextElementSibling.classList.remove("govuk-input--error")
+        }
+      });
+    });
+
     // Set the body text class to page information elements
     document.querySelector("#api > div.intro > p").classList.add("govuk-body");
     document.querySelector("#api > div#phoneNumbers").classList.add("govuk-body");
