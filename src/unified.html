@@ -205,7 +205,13 @@
     errorMessages.forEach(function(errorMessage){
       errorMessage.classList.add("govuk-error-message");
     });
-    document.querySelector("#localAccountForm > div.error.pageLevel").classList.add("govuk-error-summary");
+    
+    // Azure B2C provides too much information when an error occurs, for example the account does not exist or the password is wrong. We will override that
+    // behaviour and set a generic error message.
+    const errorSummary = document.querySelector("#localAccountForm > div.error.pageLevel");
+    errorSummary.classList.add("govuk-error-summary");
+    errorSummary.innerHTML.replace("<p class='govuk-error-message'>We were unable to verify your account, please ensure you have entered the correct details.</p>");
+    
 
     // Add govuk-button class to submit button
     document.querySelector("#next").classList.add("govuk-button");
