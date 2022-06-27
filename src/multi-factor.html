@@ -155,7 +155,7 @@
     }
 
     // Add error styling when an error message becomes visible
-    document.querySelector("#codeVerification > div.error.itemLevel").forEach(function(errorMessage){
+    document.querySelectorAll("#codeVerification > div.error.itemLevel").forEach(function(errorMessage){
       respondToVisibility(errorMessage, visible => {
         if (visible) {
           // Apply the error style to parent form group element
