@@ -171,7 +171,7 @@
           errorMessage.parentElement.classList.remove("govuk-form-group--error");
 
           // Remove error style from text input element
-          errorMessage.nextElementSibling.classList.remove("govuk-input--error")
+          errorMessage.nextElementSibling.classList.remove("govuk-input--error");
 
           // Remove error style from alert
           errorMessage.classList.remove("govuk-error-message");
@@ -192,6 +192,9 @@
     
     // Set the input style for the code textbox
     document.querySelector("div#api > div#codeVerification > input#verificationCode").classList.add("govuk-input");
+
+    // Add link styling to the new code link
+    document.querySelector("#retryCode").classList.add("govuk-link");
 
     // Add govuk-button class to the buttons, and adjust their spacing
     document.querySelector("#sendCode").classList.add("govuk-button");
