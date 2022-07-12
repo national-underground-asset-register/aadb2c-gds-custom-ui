@@ -213,11 +213,16 @@
       phoneNumbers.classList.add("govuk-inset-text");
     }
 
-    const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly");
-    if (phoneEntry) {
-      phoneEntry.classList.add("govuk-body");
-      phoneEntry.classList.add("govuk-inset-text");
-    }
+    const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly > div.phoneNumber");
+    respondToVisibility(phoneEntry, visible => {
+      if (visible) {
+        phoneEntry.classList.add("govuk-body");
+        phoneEntry.classList.add("govuk-inset-text");
+      } else {
+        phoneEntry.classList.remove("govuk-body");
+        phoneEntry.classList.remove("govuk-inset-text");
+      }
+    })
     
     const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
     if (phoneEntryCodeGroup) phoneEntryCodeGroup.classList.add("govuk-form-group");
