@@ -231,9 +231,9 @@
     const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly");
     respondToNewDiv(phoneEntry, addedNodes => {
       addedNodes.forEach(function(node){
-        if (addedNode.classList.contains("number")) {
-          addedNode.classList.add("govuk-body");
-          addedNode.classList.add("govuk-inset-text");
+        if (node.classList.contains("number")) {
+          node.classList.add("govuk-body");
+          node.classList.add("govuk-inset-text");
         }
       });
     })    
