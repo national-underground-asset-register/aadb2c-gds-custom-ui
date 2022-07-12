@@ -213,10 +213,10 @@
       phoneNumbers.classList.add("govuk-inset-text");
     }
 
-    const phoneNumber = document.querySelector("#phoneEntry > div.readonly > div");
-    if (phoneNumber) {
-      phoneNumber.classList.add("govuk-body");
-      phoneNumber.classList.add("govuk-inset-text");
+    const phoneEntry = document.querySelector("#api > div#phoneEntry");
+    if (phoneEntry) {
+      phoneEntry.classList.add("govuk-body");
+      phoneEntry.classList.add("govuk-inset-text");
     }
     
     const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
