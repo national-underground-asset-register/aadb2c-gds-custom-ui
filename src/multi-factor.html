@@ -232,7 +232,7 @@
     respondToNewDiv(phoneEntry, addedNodes => {
       addedNodes.forEach(function(node){
         console.log("Added node: ", node);
-        if (node.classList.contains("number")) {
+        if (node.classList.contains("phoneNumber")) {
           node.classList.add("govuk-body");
           node.classList.add("govuk-inset-text");
         }
