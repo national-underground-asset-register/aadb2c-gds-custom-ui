@@ -140,6 +140,7 @@
     </div>
   </footer>
   <script>
+    
     function respondToVisibility(element, callback) {
       var options = {
         root: document.documentElement,
@@ -152,6 +153,20 @@
       }, options);
 
       observer.observe(element);
+    }
+
+    function respondToNewDiv(element, callback) {
+      var options = {
+        root: document.documentElement,
+      };
+
+      var observer = new MutationObserver((mutations, observer) => {
+        mutations.forEach(mutation => {
+          callback(mutation.addedNodes);
+        })
+      }, options);
+
+      observer.observe(element, { childList: true });
     }
 
     // Add error styling when an error message becomes visible
@@ -213,11 +228,15 @@
       phoneNumbers.classList.add("govuk-inset-text");
     }
 
-    document.querySelector("#sendCode").addEventListener("click", function(){
-      const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly > div.phoneNumber");
-      phoneEntry.classList.add("govuk-body");
-      phoneEntry.classList.add("govuk-inset-text");
-    });
+    const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly");
+    respondToNewDiv(phoneEntry, addedNodes => {
+      addedNodes.forEach(function(node){
+        if (addedNode.classList.contains("number")) {
+          addedNode.classList.add("govuk-body");
+          addedNode.classList.add("govuk-inset-text");
+        }
+      });
+    })    
 
     const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
     if (phoneEntryCodeGroup) phoneEntryCodeGroup.classList.add("govuk-form-group");
