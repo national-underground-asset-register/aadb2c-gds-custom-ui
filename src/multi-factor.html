@@ -179,22 +179,55 @@
       });
     });
 
+    // Add error styling when an error message becomes visible
+    document.querySelectorAll("#phoneEntry > div.error.itemLevel").forEach(function(errorMessage){
+      respondToVisibility(errorMessage, visible => {
+        if (visible) {
+          // Apply the error style to parent form group element
+          errorMessage.parentElement.classList.add("govuk-form-group--error");
+
+          // Apply error style to text input element
+          errorMessage.nextElementSibling.classList.add("govuk-input--error");
+
+          // Apply error message style to alert
+          errorMessage.classList.add("govuk-error-message");
+        } else {
+          // Remove the error style from parent form group element
+          errorMessage.parentElement.classList.remove("govuk-form-group--error");
+
+          // Remove error style from text input element
+          errorMessage.nextElementSibling.classList.remove("govuk-input--error");
+
+          // Remove error style from alert
+          errorMessage.classList.remove("govuk-error-message");
+        }
+      });
+    });
+
     // Set the body text class to page information elements
     document.querySelector("#api > div.intro > p").classList.add("govuk-body");
-    document.querySelector("#api > div#phoneNumbers").classList.add("govuk-body");
-    document.querySelector("#api > div#phoneNumbers").classList.add("govuk-inset-text");
 
+    const phoneNumbers = document.querySelector("#api > div#phoneNumbers");
+    if (phoneNumbers) {
+      phoneNumbers.classList.add("govuk-body");
+      phoneNumbers.classList.add("govuk-inset-text");
+    }
+    
     // Set form groups to entry items
-    document.querySelector("div#api > div#codeVerification").classList.add("govuk-form-group");
+    const codeVerificationGroup = document.querySelector("div#api > div#codeVerification");
+    if (codeVerificationGroup) codeVerificationGroup.classList.add("govuk-form-group");
 
     // Set the code verification input label
-    document.querySelector("div#api > div#codeVerification > div").classList.add("govuk-label");
+    const codeVerificationLabel = document.querySelector("div#api > div#codeVerification > div");
+    if (codeVerificationLabel) codeVerificationLabel.classList.add("govuk-label");
     
     // Set the input style for the code textbox
-    document.querySelector("div#api > div#codeVerification > input#verificationCode").classList.add("govuk-input");
+    const codeVerificationInput = document.querySelector("div#api > div#codeVerification > input#verificationCode");
+    if (codeVerificationInput) codeVerificationInput.classList.add("govuk-input");
 
     // Add link styling to the new code link
-    document.querySelector("#retryCode").classList.add("govuk-link");
+    var retryCodeLink = document.querySelector("#retryCode");
+    if (retryCodeLink) retryCodeLink.classList.add("govuk-link");
 
     // Add govuk-button class to the buttons, and adjust their spacing
     document.querySelector("#sendCode").classList.add("govuk-button");
