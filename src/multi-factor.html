@@ -213,6 +213,24 @@
       phoneNumbers.classList.add("govuk-inset-text");
     }
     
+    const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
+    if (phoneEntryCodeGroup) phoneEntryCodeGroup.classList.add("govuk-form-group");
+
+    const phoneEntryCodeLabel = document.querySelector("#phoneEntry > div.input > div.code > label")
+    if (phoneEntryCodeLabel) phoneEntrySelectLabel.classList.add("govuk-label");
+
+    const phoneEntryCodeSelect = document.querySelector("#countryCode");
+    if (phoneEntryCodeSelect) phoneEntryCodeSelect.classList.add("govuk-select");
+
+    const phoneEntryNumberGroup = document.querySelector("#phoneEntry > div.input > div.number")
+    if (phoneEntryNumberGroup) phoneEntryNumberGroup.classList.add("govuk-form-group");
+
+    const phoneEntryNumberLabel = document.querySelector("#phoneEntry > div.input > div.number > label")
+    if (phoneEntryNumberLabel) phoneEntryNumberLabel.classList.add("govuk-label");
+
+    const phoneEntryNumberInput = document.querySelector("#number");
+    if (phoneEntryNumberInput) phoneEntryNumberInput.classList.add("govuk-select");
+
     // Set form groups to entry items
     const codeVerificationGroup = document.querySelector("div#api > div#codeVerification");
     if (codeVerificationGroup) codeVerificationGroup.classList.add("govuk-form-group");
