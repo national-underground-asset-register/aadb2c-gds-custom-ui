@@ -212,6 +212,12 @@
       phoneNumbers.classList.add("govuk-body");
       phoneNumbers.classList.add("govuk-inset-text");
     }
+
+    const phoneNumber = document.querySelector("#phoneEntry > div.readonly > div");
+    if (phoneNumber) {
+      phoneNumber.classList.add("govuk-body");
+      phoneNumber.classList.add("govuk-inset-text");
+    }
     
     const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
     if (phoneEntryCodeGroup) phoneEntryCodeGroup.classList.add("govuk-form-group");
