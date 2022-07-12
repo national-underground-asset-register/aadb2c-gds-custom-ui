@@ -231,7 +231,6 @@
     const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly");
     respondToNewDiv(phoneEntry, addedNodes => {
       addedNodes.forEach(function(node){
-        console.log("Added node: ", node);
         if (node.classList.contains("phoneNumber")) {
           node.classList.add("govuk-body");
           node.classList.add("govuk-inset-text");
