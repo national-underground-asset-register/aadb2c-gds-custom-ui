@@ -229,15 +229,17 @@
     }
 
     const phoneEntry = document.querySelector("#api > div#phoneEntry > div.readonly");
-    respondToNewDiv(phoneEntry, addedNodes => {
-      addedNodes.forEach(function(node){
-        if (node.classList.contains("phoneNumber")) {
-          node.classList.add("govuk-body");
-          node.classList.add("govuk-inset-text");
-        }
-      });
-    })    
-
+    if (phoneEntry) {
+      respondToNewDiv(phoneEntry, addedNodes => {
+        addedNodes.forEach(function(node){
+          if (node.classList.contains("phoneNumber")) {
+            node.classList.add("govuk-body");
+            node.classList.add("govuk-inset-text");
+          }
+        });
+      })
+    }
+       
     const phoneEntryCodeGroup = document.querySelector("#phoneEntry > div.input > div.code");
     if (phoneEntryCodeGroup) phoneEntryCodeGroup.classList.add("govuk-form-group");
 
